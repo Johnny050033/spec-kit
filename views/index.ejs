@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎭 隨機笑話生成器</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1>🎭 隨機笑話生成器</h1>
+        <p class="subtitle">使用 JokeAPI 生成有趣的笑話</p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Controls Section -->
+      <section class="controls">
+        <h2>⚙️ 設置選項</h2>
+        
+        <div class="form-group">
+          <label for="category">笑話分類：</label>
+          <select id="category">
+            <option value="any">任意分類</option>
+            <option value="General">一般笑話</option>
+            <option value="Programming">編程笑話</option>
+            <option value="Knock-knock">敲門笑話</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="type">笑話類型：</label>
+          <select id="type">
+            <option value="any">任意類型</option>
+            <option value="single">單行笑話</option>
+            <option value="twopart">雙行笑話</option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <button id="generateBtn" class="btn btn-primary">
+            <span class="btn-icon">✨</span>
+            生成笑話
+          </button>
+          <button id="generateMultipleBtn" class="btn btn-secondary">
+            <span class="btn-icon">🎪</span>
+            生成多個
+          </button>
+          <button id="clearBtn" class="btn btn-tertiary">
+            <span class="btn-icon">🗑️</span>
+            清除
+          </button>
+        </div>
+      </section>
+
+      <!-- Joke Display Section -->
+      <section class="jokes-section">
+        <h2>😄 笑話展示</h2>
+        
+        <!-- Loading State -->
+        <div id="loading" class="loading hidden">
+          <div class="spinner"></div>
+          <p>正在獲取笑話中...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="error hidden"></div>
+
+        <!-- Single Joke Display -->
+        <div id="jokeContainer" class="joke-container hidden">
+          <div class="joke-card">
+            <div class="joke-content">
+              <p id="jokeText" class="joke-text"></p>
+            </div>
+            <div class="joke-meta">
+              <span id="jokeCategory" class="badge"></span>
+              <span id="jokeType" class="badge badge-secondary"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multiple Jokes Display -->
+        <div id="jokesContainer" class="jokes-grid hidden"></div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">🎭</div>
+          <p>點擊按鈕開始生成笑話！</p>
+        </div>
+      </section>
+
+      <!-- Statistics Section -->
+      <section class="stats">
+        <h2>📊 統計信息</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="totalJokes">0</div>
+            <div class="stat-label">總笑話數</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="totalRequests">0</div>
+            <div class="stat-label">API 請求數</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="successRate">0%</div>
+            <div class="stat-label">成功率</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>🚀 由 Express.js 和 JokeAPI 驅動</p>
+      <p><a href="https://github.com/Johnny050033/spec-kit" target="_blank">查看源代碼</a></p>
+    </footer>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

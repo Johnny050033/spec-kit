@@ -1,0 +1,29 @@
+{
+  "name": "random-joke-generator",
+  "version": "1.0.0",
+  "description": "Random Joke Generator with Web Interface using JokeAPI",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "cli": "node joke-generator.js"
+  },
+  "keywords": [
+    "joke",
+    "api",
+    "generator",
+    "web",
+    "express",
+    "nodejs"
+  ],
+  "author": "Johnny050033",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
